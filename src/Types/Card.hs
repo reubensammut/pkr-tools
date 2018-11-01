@@ -16,7 +16,7 @@ getCardColorPrefix :: Suit -> String
 getCardColorPrefix x = setSGRCode [SetColor Foreground Dull (getSuitColor x)]
 
 instance Show Card where
-  show (Card r s) = getCardColorPrefix s ++ (show r) ++ show(s) ++ setSGRCode [Reset]
+  show (Card r s) = getCardColorPrefix s ++ show r ++ show s ++ setSGRCode [Reset]
 
 instance Read Card where
   readsPrec _ (r:s:therest) =
